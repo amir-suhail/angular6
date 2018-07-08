@@ -1,0 +1,27 @@
+<div class="login-container">
+  <mat-card class="offset-md-4 col-md-4 align-self-center">
+      <h1>Login</h1>
+      <span class="fas user-shield"></span>
+      <form class="example-form row">
+        <mat-form-field class="col-md-12">
+          <input matInput placeholder="Email" [formControl]="emailFormControl">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-md-12">
+          <input matInput placeholder="Password" [formControl]="passwordFormControl">
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <div class="col-md-12 text-center">
+          <button mat-raised-button color="primary">SIGN IN</button>
+        </div>
+      </form>
+  </mat-card>
+</div>
+
